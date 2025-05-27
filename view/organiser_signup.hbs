@@ -1,0 +1,53 @@
+
+
+<div class="signup-container">
+  <h2>Εγγραφή Διοργανωτή</h2>
+  <form class="signup-form" action="/organiser-signup" method="POST">
+      <label for="org-name">Ονοματεπώνυμο ή Εταιρική Επωνυμία</label>
+      <input type="text" id="org-name" name="organization_name" placeholder="Εισάγετε το ονοματεπώνυμο ή την εταιρική επωνυμία" required>
+      
+      <label for="org-address">Διεύθυνση / Έδρα</label>
+      <input type="text" id="org-address" name="organization_address" placeholder="Εισάγετε τη διεύθυνση ή την έδρα" required>
+      
+      <label for="org-phone">Τηλέφωνο Επικοινωνίας</label>
+      <input type="tel" id="org-phone" name="organization_phone" placeholder="Εισάγετε τον αριθμό τηλεφώνου" required>
+      
+      <label for="email">Διεύθυνση Ηλεκτρονικού Ταχυδρομείου</label>
+      <input type="email" id="email" name="email" placeholder="Εισάγετε το email" required>
+      
+      <label for="afm">Α.Φ.Μ.</label>
+      <input type="text" id="afm" name="afm" placeholder="Εισάγετε τον Α.Φ.Μ." required>
+      
+      <label for="payment-details">Στοιχεία Λογαριασμού Πληρωμών</label>
+      <input type="text" id="payment-details" name="payment_details" placeholder="Εισάγετε τα στοιχεία του λογαριασμού πληρωμών" required>
+      
+      <label for="password">Κωδικός Πρόσβασης</label>
+      <input type="password" id="password" name="password" placeholder="Εισάγετε κωδικό" required>
+      
+      <label for="confirm-password">Επιβεβαίωση Κωδικού</label>
+      <input type="password" id="confirm-password" name="confirm_password" placeholder="Επιβεβαιώστε τον κωδικό" required>
+      
+      <div class="self-declaration-container">
+          <label class="checkbox-container">
+              Δηλώνω ότι θα προσφέρω μόνο προϊόντα ή υπηρεσίες που συμμορφώνονται με τους εφαρμοστέους κανόνες του δικαίου της Ένωσης
+              <input type="checkbox" id="self-declaration-check" name="self_declaration_checked" required>
+              <span class="checkmark"></span>
+          </label>
+      </div>
+        {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+        {{/if}}
+      <button type="submit">Εγγραφή</button>
+  </form>
+  <div class="login-link">
+      <div class="group">
+          <span>Έχετε λογαριασμό;</span>
+          <a href="/login">Σύνδεση</a>
+      </div>
+      <div class="group">
+          <span>Είστε χρήστης;</span>
+          <a href="/signup">Εγγραφή Χρήστη</a>
+      </div>
+  </div>
+</div>
+<script src="/src/signup_validation.js"></script>

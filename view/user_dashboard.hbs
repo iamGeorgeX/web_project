@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+    <h2>Τα εισιτήριά σου, {{user}}!</h2>
+    
+    <!-- Tickets Section -->
+    <section class="tickets-section">
+        <h3>Εισιτήρια</h3>
+        <div class="ticket-cards">
+            {{#if tickets.length}}
+                {{#each tickets}}
+                    <div class="ticket-card">
+                        <p><strong>Αριθμός Εισιτηρίου:</strong> {{ticket_id}}</p>
+                        <p><strong>Εκδήλωση:</strong> {{title}}</p>
+                        <p><strong>Ημερομηνία:</strong> {{dates}}</p>
+                        <p><strong>Σειρά:</strong> Σειρά {{row_index}}</p>
+                        <p><strong>Θέση:</strong> Θέση{{number_index}}</p>
+                        <p class="ticket-status {{status}}">
+                            <strong>Κατάσταση:</strong> 
+                            {{#if (eq status "sold")}}
+                                <span class="active-status">Ενεργό</span>
+                            {{else}}
+                                Διαθέσιμο
+                            {{/if}}
+                        </p>
+                    </div>
+                {{/each}}
+            {{else}}
+                <p>Δεν έχετε εισιτήρια.</p>
+            {{/if}}
+        </div>
+    </section>
+    
+    <!-- Elegant Change Password Link -->
+    <div class="password-link">
+        <a href="/change-password">Αλλαγή Κωδικού Πρόσβασης</a>
+    </div>
+</div>

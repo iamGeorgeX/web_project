@@ -1,0 +1,34 @@
+{
+  "name": "projectforserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon start.mjs",
+    "seed": "node model/sqlite/seed.js",
+    "debug": "node --inspect start.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "argon2": "^0.43.0",
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^11.10.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "express-session-sqlite": "^2.1.1",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.0",
+    "session-file-store": "^1.5.0"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
+    "nodemon": "^3.1.10"
+  }
+}

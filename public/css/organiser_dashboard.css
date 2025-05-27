@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-color: #6A0DAD;
+    --orange: #F79F1F;
+    --text-color-1: #444;
+    --text-color-2: #666;
+    --bg-color-1: #fff;
+    --bg-color-2: #eee;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color-2);
+    color: var(--text-color-1);
+}
+
+
+html::-webkit-scrollbar-thumb {
+    background:var(--orange);
+}
+
+body{
+    background:var(--bg-color-2)
+} 
+
+
+body.active{
+    --text-color-1:#fff;
+    --text-color-2:#eee;
+    --bg-color-1:#333;
+    --bg-color-2:#222;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+
+body.active .dashboard-container {
+    background: #333;
+    color: var(--text-color-1);
+    box-shadow: 0 2px 16px rgba(60,60,60,0.25);
+    border: 1px solid var(--accent-grey-dark);
+}
+
+
+.dashboard-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+    }
+    .dashboard-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+    }
+    /* New Event Button */
+    .new-event-btn {
+        display: inline-block;
+        margin: 20px auto;
+        padding: 12px 20px;
+        background-color: var(--primary-color);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+    .new-event-btn:hover {
+        background-color: #4A077D;
+    }
+    /* Events Section */
+    .events-section {
+        margin-bottom: 40px;
+    }
+    .events-section h3 {
+        margin-bottom: 15px;
+        font-size: 1.2em;
+        color: #333;
+    }
+    /* Event Cards: one down the other */
+    .event-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .event-card {
+        position: relative;
+        background: #ffffff;
+        padding: 20px;
+        border-left: 4px solid var(--primary-color);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .event-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .event-card p {
+        margin: 5px 0;
+        font-size: 1em;
+        color: #333;
+        line-height: 1.4;
+    }
+    .event-card strong {
+        color: var(--primary-color);
+    }
+    /* Event Actions */
+    .event-actions {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .edit-event {
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    .edit-event:hover {
+        transform: scale(1.1);
+    }
+    /* Elegant Change Password Link */
+    .password-link {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .password-link a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .password-link a:hover {
+        background-color: #4A077D;
+        transform: translateY(-3px);
+    }
+    body.active .dashboard-container h3 {
+    color: #fff;
+    }

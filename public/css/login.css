@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-color: #6A0DAD;
+    --orange: #F79F1F;
+    --text-color-1: #444;
+    --text-color-2: #666;
+    --bg-color-1: #fff;
+    --bg-color-2: #eee;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color-2);
+    color: var(--text-color-1);
+}
+
+
+html::-webkit-scrollbar-thumb {
+    background:var(--orange);
+}
+
+body{
+    background:var(--bg-color-2)
+} 
+
+
+body.active{
+    --text-color-1:#fff;
+    --text-color-2:#eee;
+    --bg-color-1:#333;
+    --bg-color-2:#222;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+
+
+
+.login-link {
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    color: black;
+    display: flex; /* Use flexbox for horizontal alignment */
+    flex-direction: column; /* Stack groups vertically */
+    gap: 15px; /* Add spacing between groups */
+}
+
+.login-link .group {
+    display: flex; /* Align items horizontally within each group */
+    align-items: center; /* Vertically center the text and link */
+    gap: 10px; /* Add spacing between the text and the link */
+}
+
+.login-link a {
+    color: #6A0DAD;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    line-height: 1.4;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #6A0DAD;
+    border-color: #6A0DAD;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}

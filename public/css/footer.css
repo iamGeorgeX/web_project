@@ -1,0 +1,146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-color: #6A0DAD;
+    --orange: #F79F1F;
+    --text-color-1: #444;
+    --text-color-2: #666;
+    --bg-color-1: #fff;
+    --bg-color-2: #eee;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color-2);
+    color: var(--text-color-1);
+}
+
+
+html::-webkit-scrollbar-thumb {
+    background:var(--orange);
+}
+
+body{
+    background:var(--bg-color-2)
+} 
+
+
+body.active{
+    --text-color-1:#fff;
+    --text-color-2:#eee;
+    --bg-color-1:#333;
+    --bg-color-2:#222;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+
+
+
+
+
+.footer-section {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--bg-color-1);
+    color: var(--text-color-1);
+    margin-top: 50px; /* Add space above the footer */
+}
+
+.footer {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Centers the footer */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between; /* Ensures even spacing */
+    flex-wrap: wrap; /* Prevents overflow issues */
+    width: 100%; /* Makes sure it takes full width */
+}
+
+.footer-column {
+    margin: 0 12px;
+}
+
+.footer-column div {
+    color: var(--text-color-1);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.footer-column ul {
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.footer-column ul li {
+    list-style: none; /* Remove bullet points */
+    margin: 6px 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: var(--text-color-2);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+    color: var(--text-color-1);
+}
+
+.social-links {
+    display: flex;
+    align-items: center; /* Center social icons vertically */
+}
+
+.social-links i {
+    color: var(--text-color-1);
+    background: var(--bg-color-2);
+    padding: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.social-links i:hover {
+    background: var(--primary-color);
+}
+
+.social-links div {
+    color: #fff; /* White color for headings */
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+hr {
+    margin: 20px 40px;
+    border: 0;
+    outline: 0;
+    border: 1px solid var(--text-color-2);
+    margin-top: 40px;
+}
+
+.copyright {
+    text-align: center;  /* Center the text */
+    color: var(--text-color-2);
+    font-size: 14px;  /* Slightly smaller text */
+    margin-top: 20px;  /* Add space above */
+    padding-bottom: 20px;  /* Ensure it's not too low */
+}
+

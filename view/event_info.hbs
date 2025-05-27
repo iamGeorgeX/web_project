@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{eventTitle}}</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .event-header {
+      display: block;
+      margin-bottom: 30px;
+      color: black;
+    }
+    .event-page {
+  background-color: var(--bg-color-1);
+  color: var(--text-color-1);
+  box-shadow: var(--box-shadow);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+  .event-image {
+    width: 100%;
+    max-width: 500px; /* Set a smaller maximum width */
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .event-details h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--text-color-1);
+    }
+    .event-details p {
+      margin: 5px 0;
+      line-height: 1.6;
+      color: var(--text-color-1);
+      
+    }
+    .event-description {
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      margin-bottom: 30px;
+      color:var(--text-color-1);
+    }
+    .event-description h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: var(--text-color-1);
+    }
+    .price-legend {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .price-legend-item {
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 8px 14px;
+      border-radius: 4px;
+      color: #fff;
+    }
+    
+#seat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  max-width: 100%;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+/* Each row of seats should wrap if too many seats appear in one row */
+.seat-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+}
+
+/* Basic seat styles */
+.seat {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Zone-specific available seats (using data-zone attribute) */
+.seat[data-zone="ZoneA"]:not(.sold):not(.selected) { 
+  background-color: #7FB3D5; 
+}
+.seat[data-zone="ZoneB"]:not(.sold):not(.selected) { 
+  background-color: #F39C12; 
+}
+.seat[data-zone="ZoneC"]:not(.sold):not(.selected) { 
+  background-color: #E67E22; 
+}
+.seat[data-zone="ZoneD"]:not(.sold):not(.selected) { 
+  background-color: #E74C3C; 
+}
+.seat[data-zone="ZoneE"]:not(.sold):not(.selected) { 
+  background-color: #2980B9; 
+}
+
+/* Sold seats */
+.seat.sold {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Selected seats */
+.seat.selected {
+  outline: 2px solid #27ae60;
+  transform: scale(1.1);
+}
+    #selected-seats-popup {
+      margin-top: 20px;
+      padding: 15px;
+      
+      border-radius: 8px;
+      display: none;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--text-color-1);
+    }
+
+    body.active #selected-seats-popup {
+  background: #2d2c2c;
+  color: #232429; /* dark text for contrast */
+}
+body.active #selected-seats-popup h3 {
+  color: var(--text-color-1);
+}
+body.active #selected-seats-list li {
+  color: #232429;
+}
+    
+   
+
+    #selected-seats-popup h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: black;
+      text-align: center;
+    }
+    
+    #selected-seats list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      color: var(--text-color-1);
+    }
+    #selected-seats-list li {
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  color: #fff; /* white text for contrast */
+}
+
+#buy-selected-btn {
+  background: #27ae60;
+  color: var(--text-color-1);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+  display: block;     /* Makes the button a block-level element */
+  margin: 20px auto 0; /* Auto left/right margins center it */
+}
+
+#buy-selected-btn:hover {
+  background: #219150;
+  color: var(--text-color-1);
+}
+
+   
+  </style>
+</head>
+<body>
+  <div class="event-page" data-eventid="{{eventId}}">
+    <!-- Event Header with image on top -->
+    <div class="event-header">
+      <img src="{{eventImg}}" alt="{{eventTitle}}" class="event-image">
+      <div class="event-details">
+        <h1>{{eventTitle}}</h1>
+        <p><strong>Date:</strong> {{eventDate}}</p>
+        <p><strong>Location:</strong> {{eventSpaceName}}</p>
+        <p><strong>Place:</strong> {{eventPlace}}</p>
+        <p><strong>Organized by:</strong> {{eventOrganizer}}</p>
+        <p><strong>Phone:</strong> {{eventPhone}}</p>
+      </div>
+    </div>
+
+    <!-- Event Description -->
+    <div class="event-description">
+      <h2>Description</h2>
+      {{#each eventDescription}}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+
+    <!-- Price Legend -->
+<div class="price-legend" id="price-legend" >
+  {{#each eventPrice}}
+    <div class="price-legend-item {{@key}}">
+      {{@key}}: ${{this}}
+    </div>
+  {{/each}}
+</div>
+
+    <!-- Seat Map Section -->
+    <section class="seat-graph">
+      <h2>Select Your Seat</h2>
+<div id="seat-container">
+  {{#each rows}}
+    <div class="seat-row">
+      {{#each this}}
+        <button class="seat {{#if (eq status 'sold')}}sold{{/if}}"
+                data-zone="{{zone}}"
+                data-index="{{inc @index}}"
+                data-row="{{inc @../index}}">
+          {{inc @../index}}-{{inc @index}}
+        </button>
+      {{/each}}
+    </div>
+  {{/each}}
+</div>
+
+      <!-- Selected Seats Popup -->
+      <div id="selected-seats-popup">
+        <h3>Selected Seats</h3>
+        <ul id="selected-seats-list"></ul>
+        <button id="buy-selected-btn" type="button">Buy Selected</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Client-Side Seat-Selection Script -->
+  <script src="/src/seatSelect.js"></script>
+</body>
+</html>

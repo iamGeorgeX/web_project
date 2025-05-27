@@ -1,0 +1,25 @@
+
+<div class="signup-container">
+    <h2>Σύνδεση</h2>
+    <form class="signup-form" action="/login" method="POST">
+        <label for="email">Διεύθυνση Ηλεκτρονικού Ταχυδρομείου</label>
+        <input type="email" id="email" name="email" placeholder="Εισάγετε το email σας" required>
+        
+        <label for="password">Κωδικός Πρόσβασης</label>
+        <input type="password" id="password" name="password" placeholder="Εισάγετε τον κωδικό σας" required>
+        {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+        {{/if}}
+        <button type="submit">Σύνδεση</button>
+    </form>
+   <div class="login-link">
+    <div class="group">
+        <span>Δεν έχετε λογαριασμό;</span>
+        <a href="/signup">Εγγραφή Χρήστη</a>
+    </div>
+    <div class="group">
+        <span>Είστε διοργανωτής;</span>
+        <a href="/organiser-signup">Εγγραφή Διοργανωτή</a>
+    </div>
+</div>
+</div>

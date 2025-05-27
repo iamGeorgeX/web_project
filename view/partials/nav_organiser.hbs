@@ -1,0 +1,27 @@
+<nav class="navbar organiser-navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="/">Book.com</a>
+        </div>
+        <ul>
+            <li><a href="/set-event" class="btn">Δημιουργία Εκδήλωσης</a></li>
+            {{#if user}}
+                {{#unless isDashboard}}
+                    <li>
+                        <a href="/dashboard" class="btn">
+                            {{#if user.name}}
+                                {{user.name}}
+                            {{else}}
+                                {{user.first_name}} {{user.last_name}}
+                            {{/if}}
+                        </a>
+                    </li>
+                {{/unless}}
+                <li><a href="/logout" class="btn">Αποσύνδεση</a></li>
+            {{else}}
+                <li><a href="/login" class="btn">Σύνδεση</a></li>
+            {{/if}}
+            <li><i class="fas fa-moon" id="theme-btn"></i></li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,35 @@
+<div class="stats-container">
+    <h2>Στατιστικά Εκδήλωσης: Συναυλία Rock</h2>
+    <div class="tickets-info">
+        <p>Εκπτωτικές Πωλήσεις: <strong>150 εισιτήρια</strong></p>
+        <p>Συνολικές Πωλήσεις: <strong>300 εισιτήρια</strong></p>
+    </div>
+    <div class="chart-container">
+        <canvas id="ticketsChart"></canvas>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('ticketsChart').getContext('2d');
+    const ticketsChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
+            datasets: [{
+                label: 'Εισιτήρια Πουλήθηκαν',
+                data: [20, 35, 40, 60, 50, 70, 45],
+                backgroundColor: 'rgba(106, 13, 173, 0.7)',
+                borderColor: 'rgba(106, 13, 173, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 10 }
+                }
+            }
+        }
+    });
+</script>

@@ -1,0 +1,32 @@
+<div class="dropdown-container">
+    <h2 class="dropdown-title">Εκδηλώσεις {{selectedCategory}}</h2>
+    <div class="event-dropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown()">ΕΙΔΟΣ / ΚΑΤΗΓΟΡΙΑ ▼</button>
+        <div class="dropdown-content" id="event-dropdown-menu">
+            <input type="text" class="search-box" placeholder="Αναζήτηση κατηγορίας...">
+            <label><input type="checkbox"> Περιπέτεια/Δράση</label>
+            <label><input type="checkbox"> Sci-Fi</label>
+            <label><input type="checkbox"> Δράμα</label>
+            <label><input type="checkbox"> Θρίλερ</label>
+            <label><input type="checkbox"> Γουέστερν</label>
+        </div>
+    </div>
+</div>
+
+<div class="movies-grid">
+    {{#each events}}
+        <a href="/event/{{this.id}}" class="movie-link">
+            <div class="movie-box">
+                <img src="{{this.image}}" alt="{{this.title}}" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-date"><i class="fas fa-calendar"></i>{{this.date}}</div>
+                    <div class="movie-title">{{this.title}}</div>
+                    <div class="movie-place"><i class="fas fa-map-marker-alt"></i>{{this.place}}</div>
+                </div>
+            </div>
+        </a>
+    {{/each}}
+</div>
+
+<script src="/src/dropdown.js"></script>
+

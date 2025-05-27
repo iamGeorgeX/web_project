@@ -1,0 +1,43 @@
+{{!-- filepath: c:\Users\ignat\OneDrive\Υπολογιστής\web_project\view\organiser_dashboard.hbs --}}
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Organiser Dashboard</title>
+    <link rel="stylesheet" href="/css/organiser_dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+    <h2>Οι διοργανώσεις σου,{{user.name}}</h2>
+    <!-- New Event Button -->
+    <div style="text-align: center;">
+        <a class="new-event-btn" href="/set-event"><i class="fas fa-plus"></i> Νέα Εκδήλωση</a>
+    </div>
+    <!-- Events Section -->
+    <section class="events-section">
+        <h3>Οι Εκδηλώσεις μου</h3>
+        <div class="event-cards">
+            {{#if events.length}}
+                {{#each events}}
+                    <div class="event-card">
+                        <p><strong>Όνομα Εκδήλωσης:</strong> {{title}}</p>
+                        <p><strong>Ημερομηνία:</strong> {{dates}}</p>
+                        <p><strong>Τοποθεσία:</strong> {{space_id}}</p>
+                        <div class="event-actions">
+                            <button class="edit-event"><i class="fas fa-cog"></i></button>
+                        </div>
+                    </div>
+                {{/each}}
+            {{else}}
+                <p>Δεν έχετε εκδηλώσεις.</p>
+            {{/if}}
+        </div>
+    </section>
+    <!-- Elegant Change Password Link -->
+    <div class="password-link">
+        <a href="/change-password">Αλλαγή Κωδικού Πρόσβασης</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-color: #6A0DAD;
+    --orange: #F79F1F;
+    --text-color-1: #444;
+    --text-color-2: #666;
+    --bg-color-1: #fff;
+    --bg-color-2: #eee;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color-2);
+    color: var(--text-color-1);
+}
+
+
+html::-webkit-scrollbar-thumb {
+    background:var(--orange);
+}
+
+body{
+    background:var(--bg-color-2)
+} 
+
+
+body.active{
+    --text-color-1:#fff;
+    --text-color-2:#eee;
+    --bg-color-1:#333;
+    --bg-color-2:#222;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+
+
+
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Add some margin at the top */
+}
+
+.event-dropdown {
+    width: 100%; /* Make the dropdown as wide as the container */
+    display: flex;
+    justify-content: center; /* Center the dropdown button */
+}
+.dropdown-btn {
+    background: #e5e5e5;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center; /* Center the text */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 300px; /* Increase the width as needed */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow-y: auto;
+    max-height: 200px;
+    text-align: left;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.dropdown-content label {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    gap: 10px; /* Add space between the checkbox and the text */
+    color:black;
+}
+.dropdown-content label:hover {
+    background: #f0f0f0;
+}
+.search-box {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    font-size: 16px; /* Increase font size for readability */
+    transition: all 0.3s ease; /* Smooth transition for hover/focus effects */
+}
+
+.search-box:hover {
+    border-color: var(--primary-color); /* Change border color on hover */
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.2); /* Slightly stronger shadow */
+}
+
+/* Focus effect for the search box */
+.search-box:focus {
+    outline: none; /* Remove default outline */
+    border-color: var(--primary-color); /* Highlight border on focus */
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.3); /* Stronger shadow on focus */
+}
+
+.dropdown input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.dropdown-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Increase the width of the box */
+    margin: 20px auto; /* Center the box */
+}
+
+/* Title inside the dropdown container */
+.dropdown-title {
+    font-size: 24px;
+    color: var(--primary-color); /* Purple color */
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%; /* Ensure it spans the full width of the container */
+}
+
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Add some margin at the top */
+}
+
+.event-dropdown {
+    width: 100%; /* Make the dropdown as wide as the container */
+    display: flex;
+    justify-content: center; /* Center the dropdown button */
+}
+.dropdown-btn {
+    background: #e5e5e5;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center; /* Center the text */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 300px; /* Increase the width as needed */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow-y: auto;
+    max-height: 200px;
+    text-align: left;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.dropdown-content label {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    gap: 10px; /* Add space between the checkbox and the text */
+}
+.dropdown-content label:hover {
+    background: #f0f0f0;
+}
+.search-box {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    font-size: 16px; /* Increase font size for readability */
+    transition: all 0.3s ease; /* Smooth transition for hover/focus effects */
+}
+
+.search-box:hover {
+    border-color: var(--primary-color); /* Change border color on hover */
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.2); /* Slightly stronger shadow */
+}
+
+/* Focus effect for the search box */
+.search-box:focus {
+    outline: none; /* Remove default outline */
+    border-color: var(--primary-color); /* Highlight border on focus */
+    box-shadow: 0 4px 8px rgba(106, 13, 173, 0.3); /* Stronger shadow on focus */
+}
+
+.dropdown input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.dropdown-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Increase the width of the box */
+    margin: 20px auto; /* Center the box */
+}
+
+/* Title inside the dropdown container */
+.dropdown-title {
+    font-size: 24px;
+    color: var(--primary-color); /* Purple color */
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%; /* Ensure it spans the full width of the container */
+}
+
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between boxes */
+    margin: 0 auto; /* Center the grid horizontally */
+    margin-top: 30px; /* Add some space at the top */
+    margin-bottom: 40px; /* Add some space at the bottom */
+    padding: 0 20px; /* Add padding to create space on the left and right */
+    max-width: 1200px; /* Limit the grid's width */
+}
+
+/* Ensure the image sticks to the top of the box */
+.movie-box {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Ensure content starts at the top */
+    align-items: stretch; /* Ensure children stretch to fill the width */
+    height: 300px; /* Set a fixed height for all boxes */
+    width: 100%; /* Ensure it spans the grid column width */
+}
+
+/* Ensure the image is at the top and takes up the correct space */
+.movie-poster {
+    width: 100%;
+    height: 180px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the image fits nicely */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin: 0; /* Remove any default margin */
+    display: block; /* Ensure the image behaves as a block element */
+}
+
+/* Ensure the movie-info stays below the image */
+.movie-info {
+    padding: 15px;
+    flex-grow: 1; /* Allow the info section to grow and fill the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Ensure text is aligned to the left */
+}
+.movie-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-date {
+    color: #6a0dad;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Add spacing below the date */
+}
+
+.movie-title {
+    font-weight: bold;
+    margin-bottom: 10px; /* Add spacing below the title */
+    color: #333;
+}
+
+.movie-place {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px; /* Add spacing above the place */
+}
+.movie-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the link block-level */
+}
+a.movie-link {
+    text-decoration: none !important; /* Force removal of underline */
+    color: inherit; /* Ensure the text color is inherited */
+}
+
+/* Prevent layout issues */
+.movie-link .movie-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure it spans the full width */
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+}
+
+/* Ensure the image sticks to the top of the box */
+.movie-box {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Ensure content starts at the top */
+    align-items: stretch; /* Ensure children stretch to fill the width */
+    height: 300px; /* Set a fixed height for all boxes */
+    width: 100%; /* Ensure it spans the grid column width */
+}
+
+/* Ensure the image is at the top and takes up the correct space */
+.movie-poster {
+    width: 100%;
+    height: 180px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the image fits nicely */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin: 0; /* Remove any default margin */
+    display: block; /* Ensure the image behaves as a block element */
+}
+
+/* Ensure the movie-info stays below the image */
+.movie-info {
+    padding: 15px;
+    flex-grow: 1; /* Allow the info section to grow and fill the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Ensure text is aligned to the left */
+}
+.movie-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-date {
+    color: #6a0dad;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Add spacing below the date */
+}
+
+.movie-title {
+    font-weight: bold;
+    margin-bottom: 10px; /* Add spacing below the title */
+    color: #333;
+}
+
+.movie-place {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px; /* Add spacing above the place */
+}
+.movie-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the link block-level */
+}
+a.movie-link {
+    text-decoration: none !important; /* Force removal of underline */
+    color: inherit; /* Ensure the text color is inherited */
+}
+
+/* Prevent layout issues */
+.movie-link .movie-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure it spans the full width */
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+}

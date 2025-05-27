@@ -1,0 +1,44 @@
+ body {
+            background: #6A0DAD;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        .success-container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+            padding: 40px 32px;
+            text-align: center;
+            max-width: 400px;
+        }
+        .success-icon {
+            font-size: 60px;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #444;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .dashboard-link {
+            display: inline-block;
+            padding: 10px 28px;
+            background: #27ae60;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .dashboard-link:hover {
+            background: #219150;
+        }
