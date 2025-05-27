@@ -73,7 +73,7 @@ async function event_info(req, res) {
         const eventStmt = db.prepare(`
             SELECT e.id, e.dates, e.title, e.description, e.image, e.category,
                    o.name AS organizer, o.phone AS organizerPhone,
-                   s.location AS place, s.id AS space_id
+                   s.location AS city,s.name as place, s.id AS space_id
             FROM events e
             JOIN organizers o ON e.organizer_id = o.AFM
             JOIN spaces s ON e.space_id = s.id
@@ -140,6 +140,7 @@ const allSeatsRaw = seatsStmt.all(eventId).map(seat => ({
             eventImg,
             eventTitle: event.title,
             eventDate: event.dates,
+            eventCity:event.city,
             eventPlace: event.place,
             eventDescription: Array.isArray(event.description)
                 ? event.description
