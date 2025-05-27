@@ -313,6 +313,10 @@ body.active{
     margin-bottom: 10px; /* Add spacing below the date */
 }
 
+.movie-date i{
+    margin-right:5px;
+}
+
 .movie-title {
     font-weight: bold;
     margin-bottom: 10px; /* Add spacing below the title */
